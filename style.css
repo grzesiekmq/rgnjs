@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 20em;
+    width: 800px !important;
+    height: 600px !important;
+}
+
+.transform {
+    overflow-y: scroll;
+}
+
+.transform-content * {
+    width: 4em;
+}
+
+.params>input, select {
+    display: inline-block;
+    width: 4em;
+}
+
+select {
+    width: 5em;
+}

@@ -1,0 +1,340 @@
+<script id="car-props" type="text/x-handlebars-template">
+<div class="params">
+    <form id="json">
+
+       <label>
+           top speed 
+       </label>
+        <input type="number" 
+        id="topSpeed"
+         value="{{topSpeed}}"
+          class="form-control"
+           name="topSpeed">
+       <label>
+           make
+
+       </label>
+         <input type="text"
+         id="make"
+          class="form-control" 
+          name="make"> <p></p>
+       <label>
+           model
+
+       </label>
+         <input type="text"
+         id="model"
+          class="form-control"
+           name="model">
+       <label>
+           color
+
+       </label>
+         <input type="text"
+         id="color"
+          class="form-control" 
+          name="color">
+       <label>
+           hp 
+
+       </label>
+        <input type="number"
+         id="hp"
+          value="{{hp}}"
+           class="form-control"
+            name="hp">
+       <label>
+           weight
+
+       </label>
+         <input type="number"
+         id="weight"
+          value="{{weight}}"
+           class="form-control"
+            name="weight">
+        <h3>Ackermann steering</h3>
+       <label>
+
+           wheelbase
+       </label>
+         <input type="number"
+         id=""
+          value="{{wheelBase}}"
+           class="form-control" 
+           name="wheelBase">
+      <label>
+          rear track
+
+      </label>
+         <input type="number"
+         id=""
+          value="{{rearTrack}}"
+           class="form-control" 
+           name="rearTrack"> <p></p>
+      <label>
+          turn radius 
+
+      </label>
+        <input type="number"
+         id=""
+          value="{{turnRadius}}"
+           class="form-control"
+            name="turnRadius">
+       <label>
+           wheel radius
+
+       </label>
+         <input type="number"
+         id=""
+          value="{{wheelRadius}}"
+           class="form-control" 
+           name="wheelRadius">
+        <hr color="white">
+      <label>
+          RPM
+
+      </label> 
+        <input type="number"
+         id="rpm"
+          value="{{rpm}}"
+           class="form-control" 
+           name="rpm">
+        
+        <div class="custom-control custom-switch">
+            <input type="checkbox"
+             id="isLocked"
+              class="custom-control-input"
+               checked name="isLocked">
+            <label class="custom-control-label" for="isLocked">
+                is locked </label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" id="isWon" class="custom-control-input" name="isWon">
+                
+                <label class="custom-control-label" for="isWon">
+                    is won
+                </label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" id="isUsed" class="custom-control-input" name="isUsed">
+                <label class="custom-control-label" for="isUsed">
+                    is used
+                </label>
+                
+            </div>
+            <div class="custom-control custom-switch">
+                
+                <input type="checkbox" id="AImode" class="custom-control-input" name="AImode">
+                <label class="custom-control-label" for="AImode">
+                    AI mode 
+                </label>
+                
+            </div>
+            fuel consumption <input type="number"
+             id="fuelConsumption"
+              value="{{fuelConsumption}}"
+               class="form-control" 
+               name="fuelConsumption">
+            tire exploit <input type="number"
+             id="tireExploit"
+              value="{{tireExploit}}"
+               class="form-control" 
+               name="tireExploit">
+            <h3>Types</h3>
+            drive type <select class="form-control" name="driveType">
+                <option>fwd</option>
+                <option>rwd</option>
+                <option>awd</option>
+                
+            </select>
+            
+            transmission type <select class="form-control">
+                <option>AT</option>
+                <option>MT</option>
+            </select>
+            
+            car type <select class="form-control">
+                <option>
+                    
+                </option>
+                <option>
+                    Racecar
+                    
+                </option>
+                <option>
+                    Supercar
+                    
+                </option>
+                <option>
+                    Drift
+                    
+                </option>
+                <option>
+                    Drag
+                    
+                </option>
+                <option>
+                    Rally
+                    
+                </option>
+                <option>
+                    Sports
+                </option>
+                <option>
+                    Concept
+                    
+                </option>
+                <option>
+                    Hypercar
+                    
+                </option>
+                <option>
+                    Tuned
+                </option>
+            </select>
+            
+            racing type <select class="form-control">
+                <option>
+                    GTR
+                    
+                </option>
+                <option>
+                    F1
+                    
+                </option>
+                <option>
+                    Touring
+                    
+                </option>
+            </select>
+            
+            tire type <select class="form-control">
+                <option>
+                    Sport
+                    
+                </option>
+                <option>
+                    Semi Slick
+                    
+                </option>
+                <option>
+                    Slick
+                    
+                </option>
+                <option>
+                    Supersoft
+                    
+                </option>
+                <option>
+                    Soft
+                    
+                </option>
+                <option>
+                    Medium
+                    
+                </option>
+                <option>
+                    Hard
+                    
+                </option>
+                <option>
+            Dry
+            
+        </option>
+        <option>
+            Wet
+            
+        </option>
+        <option>
+            Street
+            
+        </option>
+        <option>
+            Rally
+            
+        </option>
+        <option>
+            Dirt
+            
+        </option>
+        <option>
+            Snow
+            
+        </option>
+        <option>
+            Summer
+            
+        </option>
+    </select>
+    
+    paint <select class="form-control">
+        <option>
+            Matte
+            
+        </option>
+        <option>
+            Chrome
+            
+        </option>
+        <option>
+            Metallic
+            
+        </option>
+        <option>
+            Pearl
+            
+        </option>
+        <option>
+            Solid
+            
+        </option>
+    </select>
+    
+    safety systems <select class="form-control">
+        
+        <option>
+            ABS
+            
+        </option>
+        <option>
+            ESP
+            
+        </option>
+        <option>
+            TCS
+            
+        </option>
+        <option>
+            ESC
+            
+        </option>
+        <option>
+            ASR
+            
+        </option>
+    </select>
+    
+    price <select class="form-control">
+        <option>
+            Usd
+            
+        </option>
+        <option>
+            Eur
+            
+        </option>
+    </select> <p></p>
+    description <textarea id="desc"
+     cols="50"
+      rows="10"
+       class="form-control" name="desc">
+    </textarea>
+    
+    <button
+    class="btn btn-primary"
+    id="generate">
+    Generate car data
+</button>
+</form>
+</div>
+</script>

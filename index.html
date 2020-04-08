@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>rgn</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<iframe id="template-camera-name" src="templates/cameraNameTpl.html" style="display:none"></iframe>
+	<iframe id="template-transform" src="templates/transformTpl.html" style="display:none"></iframe>
+	<iframe id="template-car-props" src="templates/carTpl.html" style="display:none"></iframe>
+
+</head>
+
+<body>
+	<h1>rgn</h1>
+	<div class="row">
+		<div class="col-md-2 hierarchy" style="height:500px;background-color: dodgerblue;">
+			<p id="entity"></p>
+			<p id="car">Car</p>
+		</div>
+		<div class="col-md-7" style="height:500px;">
+		</div>
+		<div class="col-md-3 transform" style="background-color: dodgerblue;color: white;">
+
+		</div>
+	</div>
+	<script src="js/lib/three.js"></script>
+	<script src="js/app.js" type="module"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+</body>
+
+</html>
