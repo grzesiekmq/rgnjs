@@ -1,3 +1,1 @@
-﻿export class Clutch
-    {
-    }
+export class Clutch {}

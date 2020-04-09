@@ -1,10 +1,19 @@
-﻿
-import { Differential } from './CarParts/Differential.js';
-import { Clutch } from './CarParts/Clutch.js';
-import { Gearbox } from './CarParts/Gearbox.js';
-import { Suspension } from './CarParts/Suspension.js';
+import {
+    Differential
+} from './CarParts/Differential.js';
+import {
+    Clutch
+} from './CarParts/Clutch.js';
+import {
+    Gearbox
+} from './CarParts/Gearbox.js';
+import {
+    Suspension
+} from './CarParts/Suspension.js';
 
-import { Maths } from './Maths.js';
+import {
+    Maths
+} from './Maths.js';
 
 export class Car {
 

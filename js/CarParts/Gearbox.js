@@ -1,5 +1,3 @@
-﻿
-
 export class Gearbox {
     ATMode = {
         M: 1,

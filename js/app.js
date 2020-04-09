@@ -1,211 +1,141 @@
-import { Car } from './Car.js';
-import { Maths } from './Maths.js';
-import { Suspension } from './CarParts/Suspension.js';
-import { Transform } from './editor/Transform.js';
+import {
+    Car
+} from './Car.js';
+import {
+    Maths
+} from './Maths.js';
+import {
+    Suspension
+} from './CarParts/Suspension.js';
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
+import {
+    GLTFLoader
+} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/loaders/GLTFLoader.js';
+import {
+    OrbitControls
+} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/controls/OrbitControls.js';
+import {
+    addCameraNameTpl
+} from './editor/Template.js';
+import {
+    displayEntity
+} from './editor/EntityTransform.js';
+import {
+    displayCarDetails
+} from './editor/CarDetails.js';
+import {
+    generateCarData
+} from './editor/CarData.js';
+import {
+    calculateSpringRate,
+    calculateSteering
+} from './editor/ParamsCalculator.js';
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.name = 'camera';
+class App {
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+    constructor() {
+        this.createScene();
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-cube.name = "box";
-scene.add(cube);
+    }
 
-console.log(camera);
+    createScene() {
+        this.scene = new THREE.Scene();
 
-const entity = document.querySelector('#entity');
+        this.createCamera();
+
+        this.createLight();
+
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(this.renderer.domElement);
+
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controls.update();
+
+        this.render();
+    }
+
+    createCamera() {
+        this.fov = 40;
+        this.near = .1;
+        this.far = 1000;
+        this.camera = new THREE.PerspectiveCamera(this.fov, window.innerWidth / window.innerHeight, this.near, this.far);
+        this.camera.position.z = 5;
+        this.camera.name = 'camera';
+
+    }
+
+    createLight() {
+        this.intensity = 1;
+        this.light = new THREE.HemisphereLight(0xffffbb, 0x080820, this.intensity);
+        this.scene.add(this.light);
+
+    }
+
+    render() {
+        requestAnimationFrame(() => {
+            this.render();
+        });
+        this.renderer.render(this.scene, this.camera);
+    }
+
+}
+
+let app = new App();
+
+let model;
+
+const gltfInput = document.querySelector("#gltfUpload");
+
+function uploadGltf() {
+
+    function handleFiles() {
+        const fileList = this.files;
+        const gltf = fileList[0].name;
+
+        const entity = document.querySelector('#entity');
+        entity.textContent = gltf;
+
+        function loadGltf() {
+
+            const loader = new GLTFLoader();
+
+            loader.load(gltf, function (gltf) {
+
+                model = gltf.scene;
+                console.log(model.position);
+
+                app.scene.add(model);
+
+            }, undefined, function (error) {
+
+                console.error(error);
+
+            });
+
+        }
+        loadGltf();
+    }
+    gltfInput.addEventListener("change", handleFiles, false);
+}
+uploadGltf();
 
 const car = new Car();
 
-function loadTemplate(iframeId, id) {
-    const iFrame = document.querySelector(iframeId);
-    if (!iFrame || !iFrame.contentDocument) {
-        console.log('missing iframe or iframe can not be retrieved ' + iframeId);
-        return "";
-    }
-
-    const el = iFrame.contentDocument.querySelector(id);
-    if (!el) {
-        console.log('iframe element can not be located ' + id);
-        return "";
-    }
-
-    return el;
-}
-
-function addCameraNameTpl() {
-
-    const tpl = loadTemplate('#template-camera-name', '#camera-name');
-
-    const template = $(tpl).html();
-
-    // Compile the template data into a function
-    const templateScript = Handlebars.compile(template);
-
-    const context = { "name": camera.name };
-
-    const html = templateScript(context);
-
-    // Insert the HTML code into the page
-    $('.hierarchy').append(html);
-}
-
-function addTransformTpl() {
-
-    const tpl = loadTemplate('#template-transform', '#transform');
-
-    const template = $(tpl).html();
-
-    // Compile the template data into a function
-    const templateScript = Handlebars.compile(template);
-
-    const context = {};
-
-    const html = templateScript(context);
-
-    return html;
+function display() {
+    displayEntity(model);
+    displayCarDetails();
 
 }
 
-function addCarTpl() {
-
-    const tpl = loadTemplate('#template-car-props', '#car-props');
-
-    const template = $(tpl).html();
-
-    // Compile the template data into a function
-    const templateScript = Handlebars.compile(template);
-
-    const { topSpeed,
-        hp,
-        weight,
-        wheelBase,
-        rearTrack,
-        turnRadius,
-        wheelRadius,
-        rpm,
-        fuelConsumption,
-        tireExploit } = car;
-
-    const context = {
-        topSpeed,
-        hp,
-        weight,
-        wheelBase,
-        rearTrack,
-        turnRadius,
-        wheelRadius,
-        rpm,
-        fuelConsumption,
-        tireExploit
-
-    };
-
-    const html = templateScript(context);
-
-    return html;
-
+function calculate() {
+    calculateSteering();
+    calculateSpringRate();
 }
+display();
 
-entity.textContent = scene.getObjectByName('box').name;
-function entityCallback() {
+generateCarData();
 
-    console.log('c')
+addCameraNameTpl(app.camera);
 
-    const html = addTransformTpl();
-    $('.transform').append(html);
-
-    const posX = document.querySelector('#posX');
-    const posY = document.querySelector('#posY');
-    const posZ = document.querySelector('#posZ');
-
-    const rotX = document.querySelector('#rotX');
-    const rotY = document.querySelector('#rotY');
-    const rotZ = document.querySelector('#rotZ');
-
-    const scaleX = document.querySelector('#scaleX');
-    const scaleY = document.querySelector('#scaleY');
-    const scaleZ = document.querySelector('#scaleZ');
-
-    function setPos() {
-        Transform.setPosX(posX, cube);
-        Transform.setPosY(posY, cube);
-        Transform.setPosZ(posZ, cube);
-    }
-
-    function setRot() {
-
-        Transform.setRotX(rotX, cube);
-        Transform.setRotY(rotY, cube);
-        Transform.setRotZ(rotZ, cube);
-    }
-
-    function setScale() {
-
-        Transform.setScaleX(scaleX, cube);
-        Transform.setScaleY(scaleY, cube);
-        Transform.setScaleZ(scaleZ, cube);
-    }
-    setPos();
-    setRot();
-    setScale();
-}
-$('#entity').one('click', entityCallback);
-
-$('#car').one('click', () => {
-
-    const html = addCarTpl();
-    $('.transform').append(html);
-
-});
-
-function generateObj(obj, arr, val) {
-    if (arr.length === 1) {
-        obj[arr[0]] = val;
-        return;
-    }
-    if (!obj[arr[0]]) {
-        obj[arr[0]] = {};
-    }
-    const restArr = arr.splice(1);
-    generateObj(obj[arr[0]], restArr, val);
-};
-
-function getData(id) {
-    const form = document.querySelector(id);
-    const inputCollection = form.getElementsByTagName('input');
-    const inputArray = [...inputCollection];
-    const data = {};
-    inputArray.map(input => {
-        const { name, value } = input;
-        const splitName = name.split('.');
-        generateObj(data, splitName, value);
-    })
-    return data;
-}
-
-$(document.body).on('click', '#generate', function (e) {
-    e.preventDefault();
-
-    const data = getData('#json');
-    console.log(JSON.stringify(data));
-});
-
-addCameraNameTpl();
-
-camera.position.z = 5;
-
-const suspension = new Suspension();
-console.log('spring rate', suspension.springRate(1000, .5));
-
-function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-}
-animate();
+calculate();

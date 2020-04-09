@@ -1,0 +1,4 @@
+node_modules
+out
+*.gltf
+package-lock.json
