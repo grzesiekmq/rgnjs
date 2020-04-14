@@ -1,7 +1,4 @@
 import {
-    addTransformTpl
-} from "./Template.js";
-import {
     Transform
 } from './Transform.js';
 

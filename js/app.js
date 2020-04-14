@@ -15,8 +15,7 @@ import {
     OrbitControls
 } from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/controls/OrbitControls.js';
 import {
-    addCameraNameTpl,
-    addCameraPropsTpl
+    addCameraNameTpl    
 } from './editor/Template.js';
 import {
     displayEntity
