@@ -12,7 +12,7 @@ export function displayEntity(model) {
 
         console.log('c')
 
-        const html = addTransformTpl();
+        const html = addTransformTpl(model);
         $('.transform').append(html);
 
         const posX = document.querySelector('#posX');
@@ -50,5 +50,5 @@ export function displayEntity(model) {
         setRot();
         setScale();
     }
-    $('#entity').one('click', entityCallback);
+    // $('#entity').one('click', entityCallback);
 }

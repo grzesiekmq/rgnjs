@@ -1,9 +1,9 @@
 import {
     Car
-} from '../Car.js';
+} from '../lib/rgn/Car.js';
 import {
     Suspension
-} from '../CarParts/Suspension.js';
+} from '../lib/rgn/CarParts/Suspension.js';
 
 
 function calculateSteering() {

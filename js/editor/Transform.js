@@ -5,30 +5,52 @@ export class Transform {
 
     static setPosX(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
             const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
             if (enter) {
-                model.position.x = value;
+                position.x = value;
             }
         });
     }
 
     static setPosY(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
+
             if (enter) {
-                model.position.y = value;
+                position.y = value;
             }
         });
     }
 
     static setPosZ(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
+
             if (enter) {
-                model.position.z = value;
+                position.z = value;
             }
         });
     }
@@ -36,59 +58,107 @@ export class Transform {
 
     static setRotX(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
             if (enter) {
-                model.rotation.x = value;
+                rotation.x = value;
             }
         });
     }
 
     static setRotY(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
             if (enter) {
-                model.rotation.y = value;
+                rotation.y = value;
             }
         });
     }
 
     static setRotZ(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
             if (enter) {
-                model.rotation.z = value;
+                rotation.z = value;
             }
         });
     }
 
     static setScaleX(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
             if (enter) {
-                model.scale.x = value;
+                scale.x = value;
             }
         });
     }
 
     static setScaleY(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
             if (enter) {
-                model.scale.y = value;
+                scale.y = value;
             }
         });
     }
     static setScaleZ(transform, model) {
         transform.addEventListener('keypress', e => {
-            let value = transform.value;
+
+            let {
+                value
+            } = transform;
+
             const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
             if (enter) {
-                model.scale.z = value;
+                scale.z = value;
             }
         });
     }
