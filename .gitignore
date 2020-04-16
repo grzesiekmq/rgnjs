@@ -2,3 +2,5 @@ node_modules
 out
 *.gltf
 package-lock.json
+sublime-project.sublime-project
+sublime-project.sublime-workspace

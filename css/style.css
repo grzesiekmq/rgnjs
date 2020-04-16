@@ -48,3 +48,7 @@ select {
     background: #333;
     color: dodgerblue;
 }
+.bar > button {
+    display: block;
+    margin: 2px;
+}

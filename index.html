@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>rgn</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/notifications.css">
-
+    <link rel="stylesheet" href="css/notifications.css">
     <iframe id="template-camera-name" src="templates/cameraNameTpl.html" style="display:none"></iframe>
 </head>
 
@@ -20,37 +20,43 @@
         </div>
         <div class="col-md-7" style="height:500px;">
         </div>
-        <div class="col-md-3" style="background-color: dodgerblue;color:
+        <div class="col-md-3 bar" style="background-color: dodgerblue;color:
                 white;">
             <button class="btn btn-primary" id="addBox">add box</button>
             <button class="btn btn-primary" id="addPlane">add plane</button>
             <button class="btn btn-primary" id="addCone">add cone</button>
             <button class="btn btn-primary" id="addTube">add cylinder</button>
             <p></p>
+            <button class="btn btn-primary" id="addTrack">add track</button>
+            <p></p>
             <button class="btn btn-primary" id="exportGltf">export gltf</button>
+            <p></p>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch">
+                <label class="custom-control-label" for="customSwitch">toggle grid</label>
+            </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">preview</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-primary" id="download">download</button>
-      </div>
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="download">download</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    <h3>    
-     upload gltf
+    <h3>
+        upload gltf
     </h3>
     <input type="file" class="btn btn-primary" id="gltfUpload" value="">
     <h3>Ackermann steering calculator</h3>
@@ -66,13 +72,15 @@
     <output id="resSpringRate"></output>
     <script src="js/app.js" type="module"></script>
     <script src="js/lib/dat.gui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="dist/rgn.js"></script>
+    <!-- <script src="dist/rgn.js"></script> -->
     <script src="js/lib/index.var.js"></script>
-
-
 </body>
 
 </html>

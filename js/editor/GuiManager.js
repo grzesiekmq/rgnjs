@@ -85,11 +85,11 @@ function addGuiTransform(gui, model) {
 
 function addGuiCamera(app, gui) {
 
-const fTrans = gui.addFolder('Transform');
+    const fTrans = gui.addFolder('Transform');
     const fPos = fTrans.addFolder('Position');
     const fRot = fTrans.addFolder('Rotation');
 
-let {
+    let {
         name,
         position,
         rotation
@@ -105,7 +105,7 @@ let {
         y: 0,
         z: 0,
         resetPos: function() {
-           position.set(0, 0, 0);
+            position.set(0, 0, 0);
             pos.x = 0;
             pos.y = 0;
             pos.z = 0;
@@ -122,7 +122,7 @@ let {
             rot.z = 0;
         }
     };
-    
+
     let posX = fPos.add(pos, 'x', -10, 10, .1).listen();
     let posY = fPos.add(pos, 'y', -10, 10, .1).listen();
     let posZ = fPos.add(pos, 'z', -10, 10, .1).listen();
@@ -137,7 +137,7 @@ let {
 
     fPos.open();
     fRot.open();
-    
+
     posX.onChange(function(value) {
         position.x = value;
     });
