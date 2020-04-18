@@ -25,9 +25,11 @@
             <button class="btn btn-primary" id="addBox">add box</button>
             <button class="btn btn-primary" id="addPlane">add plane</button>
             <button class="btn btn-primary" id="addCone">add cone</button>
-            <button class="btn btn-primary" id="addTube">add cylinder</button>
+            <button class="btn btn-primary" id="addCylinder">add cylinder</button>
             <p></p>
             <button class="btn btn-primary" id="addTrack">add track</button>
+            <button class="btn btn-primary" id="addFinishLine">add finish line</button>
+
             <p></p>
             <button class="btn btn-primary" id="exportGltf">export gltf</button>
             <p></p>
@@ -65,11 +67,7 @@
     <label>turn radius</label> <input type="number" name="" id="turnRadius2">
     <button class="btn btn-primary" id="calculate">calculate steering</button>
     <output id="result"></output>
-    <h3>Spring rate</h3>
-    mass <input type="number" name="" id="mass">
-    distance <input type="number" name="" id="distance" step=".1">
-    <button class="btn btn-primary" id="calcSpring">spring rate</button>
-    <output id="resSpringRate"></output>
+    
     <script src="js/app.js" type="module"></script>
     <script src="js/lib/dat.gui.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

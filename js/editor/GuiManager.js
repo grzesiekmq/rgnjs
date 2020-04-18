@@ -1,8 +1,15 @@
 import {
-    guiCarParams
+    guiCarParams,
+    notifier,
+    camera
 } from '../app.js';
-import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
-
+/** 
+ * @summary
+ * 
+ * @param gui
+ * @param model
+ * 
+ */
 function addGuiTransform(gui, model) {
     const fTrans = gui.addFolder('Transform');
     const fPos = fTrans.addFolder('Position');
@@ -37,14 +44,14 @@ function addGuiTransform(gui, model) {
         z: 0
     };
 
-    let posX = fPos.add(position, 'x', -10, 10).listen();
-    let posY = fPos.add(position, 'y', -10, 10).listen();
-    let posZ = fPos.add(position, 'z', -10, 10).listen();
+    let posX = fPos.add(position, 'x', -10, 10, .1).listen();
+    let posY = fPos.add(position, 'y', -10, 10, .1).listen();
+    let posZ = fPos.add(position, 'z', -10, 10, .1).listen();
     fPos.add(position, 'resetPos');
 
-    let rotX = fRot.add(rotation, 'x', -4, 4).listen();
-    let rotY = fRot.add(rotation, 'y', -4, 4).listen();
-    let rotZ = fRot.add(rotation, 'z', -4, 4).listen();
+    let rotX = fRot.add(rotation, 'x', -4, 4, .05).listen();
+    let rotY = fRot.add(rotation, 'y', -4, 4, .05).listen();
+    let rotZ = fRot.add(rotation, 'z', -4, 4, .05).listen();
     fRot.add(rotation, 'resetRot');
 
     let scaleX = fScale.add(scale, 'x').listen();
@@ -59,6 +66,8 @@ function addGuiTransform(gui, model) {
 
     posX.onChange(function(value) {
         model.position.x = value;
+
+        console.log('x', value)
     });
 
     posY.onChange(function(value) {
@@ -82,8 +91,11 @@ function addGuiTransform(gui, model) {
     });
 
 }
-
-function addGuiCamera(app, gui) {
+/**
+ * 
+ * @param  gui 
+ */
+function addGuiCamera(gui) {
 
     const fTrans = gui.addFolder('Transform');
     const fPos = fTrans.addFolder('Position');
@@ -93,7 +105,7 @@ function addGuiCamera(app, gui) {
         name,
         position,
         rotation
-    } = app.camera;
+    } = camera;
 
     const cameraParams = {
         name,
@@ -203,9 +215,13 @@ function addGuiCamera(app, gui) {
 
 }
 
+/**
+ * 
+ * @param  gui 
+ */
 function addGuiCarParams(gui) {
     const cars = [];
-    let notifier = new AWN();
+
 
     const carParams = {
         make: '',
@@ -350,6 +366,10 @@ function generateCarData() {
     return gui.__controllers[0].object;
 }
 
+/**
+ * 
+ * @param  jsonData 
+ */
 function exportToJsonFile(jsonData) {
     let dataStr = JSON.stringify(jsonData);
     let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
