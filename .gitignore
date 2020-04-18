@@ -4,3 +4,5 @@ out
 package-lock.json
 sublime-project.sublime-project
 sublime-project.sublime-workspace
+
+!/assets/finish-line.gltf
