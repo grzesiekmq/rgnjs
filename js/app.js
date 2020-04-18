@@ -296,7 +296,7 @@ export {
     pi,
     loadFinishLine,
     saveString,
-
+    model,
     guiTransform,
     guiCamera,
     guiTracks

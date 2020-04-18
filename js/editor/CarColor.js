@@ -1,6 +1,9 @@
+import {
+    model
+} from '../app.js'
+
 const colorGUI = new dat.GUI();
 export function setCarColor() {
-
 
     colorGUI.hide();
 
@@ -13,7 +16,6 @@ export function setCarColor() {
     let carColor = colorGUI.addColor(params, 'color').listen()
     let carMetalness = colorGUI.add(params, 'metalness', 0, 1, .1).listen()
     let carRoughness = colorGUI.add(params, 'roughness', 0, 1, .1).listen()
-
 
     const partName = 'Paint';
     carColor.onChange((value) => model.getObjectByName(partName)
