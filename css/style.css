@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #41bbd9;
 }
 
 canvas {
@@ -11,44 +12,49 @@ canvas {
     height: 500px !important;
 }
 
-.cam-props input {
-    display: block;
-}
-
-
 .row {
     margin-top: 5px;
 }
 
 .hierarchy>p {
-    background: white;
-    color: dodgerblue;
-    box-shadow: 1px 1px 10px 0 #00adff;
+
+    color: #41bbd9;
+
 }
 
-.transform {
-    overflow-y: scroll;
+.hierarchy>p:hover,
+.bar>button {
+    border: 1px solid #41bbd9;
+
 }
 
-.transform-content * {
-    width: 4em;
-}
-
-.params>input,
-select {
-    display: inline-block;
-    width: 4em;
-}
-
-select {
-    width: 5em;
-}
-
-#cars-json {
-    background: #333;
-    color: dodgerblue;
-}
-.bar > button {
+.bar>button {
     display: block;
     margin: 2px;
+
+}
+
+.hierarchy {
+    height: 500px
+}
+
+.hierarchy,
+.bar,
+.custom-color,
+#cars-json {
+    background: #2d2d2d;
+    color: #41bbd9;
+}
+
+h3 {
+    color: #2d2d2d;
+}
+
+#gltfUpload {
+    display: none;
+}
+
+label.custom-color {
+    margin-left: 10px;
+    width: 200px;
 }

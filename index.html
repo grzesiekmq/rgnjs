@@ -13,25 +13,23 @@
 
 <body>
     <div class="row">
-        <div class="col-md-2 hierarchy" style="height:500px;background-color:
-                dodgerblue;">
+        <div class="col-md-2 hierarchy">
             <p id="entity"></p>
             <p id="car">Car</p>
         </div>
         <div class="col-md-7" style="height:500px;">
         </div>
-        <div class="col-md-3 bar" style="background-color: dodgerblue;color:
-                white;">
-            <button class="btn btn-primary" id="addBox">add box</button>
-            <button class="btn btn-primary" id="addPlane">add plane</button>
-            <button class="btn btn-primary" id="addCone">add cone</button>
-            <button class="btn btn-primary" id="addCylinder">add cylinder</button>
+        <div class="col-md-3 bar">
+            <button class="btn btn-primary custom-color" id="addBox">add box</button>
+            <button class="btn btn-primary custom-color" id="addPlane">add plane</button>
+            <button class="btn btn-primary custom-color" id="addCone">add cone</button>
+            <button class="btn btn-primary custom-color" id="addCylinder">add cylinder</button>
             <p></p>
-            <button class="btn btn-primary" id="addTrack">add track</button>
-            <button class="btn btn-primary" id="addFinishLine">add finish line</button>
+            <button class="btn btn-primary custom-color" id="addTrack">add track</button>
+            <button class="btn btn-primary custom-color" id="addFinishLine">add finish line</button>
 
             <p></p>
-            <button class="btn btn-primary" id="exportGltf">export gltf</button>
+            <button class="btn btn-primary custom-color" id="exportGltf">export gltf</button>
             <p></p>
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="customSwitch">
@@ -52,7 +50,7 @@
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="download">download</button>
+                    <button type="button" class="btn btn-primary custom-color" id="download">download</button>
                 </div>
             </div>
         </div>
@@ -60,14 +58,18 @@
     <h3>
         upload gltf
     </h3>
-    <input type="file" class="btn btn-primary" id="gltfUpload" value="">
+    <label class="btn btn-primary custom-color">
+
+        <input type="file" class="btn btn-primary custom-color" id="gltfUpload">
+        <span>Choose file</span>
+    </label>
     <h3>Ackermann steering calculator</h3>
     <label>wheelbase</label> <input type="number" name="" id="wheelBase2">
     <label>rear track</label> <input type="number" name="" id="rearTrack2">
     <label>turn radius</label> <input type="number" name="" id="turnRadius2">
-    <button class="btn btn-primary" id="calculate">calculate steering</button>
+    <button class="btn btn-primary custom-color" id="calculate">calculate steering</button>
     <output id="result"></output>
-    
+
     <script src="js/app.js" type="module"></script>
     <script src="js/lib/dat.gui.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

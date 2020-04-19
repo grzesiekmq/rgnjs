@@ -74,7 +74,7 @@ class App {
         const size = 100;
         const divisions = 10;
 
-        this.gridHelper = new GridHelper(size, divisions, 'green', 'green');
+        this.gridHelper = new GridHelper(size, divisions, '#41bbd9', '#41bbd9');
         this.gridHelper.visible = false;
 
         this.scene.add(this.gridHelper);
