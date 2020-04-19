@@ -19,7 +19,15 @@ canvas {
 .hierarchy>p {
 
     color: #41bbd9;
+    border: 1px solid transparent;
+    font-weight: bold;
 
+}
+
+.custom-color:hover,
+.hierarchy>p:hover {
+    background: #41bbd9;
+    color: #2d2d2d;
 }
 
 .hierarchy>p:hover,
@@ -56,5 +64,9 @@ h3 {
 
 label.custom-color {
     margin-left: 10px;
+    width: 200px;
+}
+
+.form-control {
     width: 200px;
 }
