@@ -8,7 +8,8 @@ import {
     MeshBasicMaterial,
     BoxGeometry,
     PlaneGeometry,
-    CylinderGeometry
+    CylinderGeometry,
+    CubeTextureLoader
 } from './lib/three.module.js';
 import {
     GLTFLoader
@@ -27,7 +28,6 @@ import {
     calculateSpringRate,
     calculateSteering
 } from './editor/ParamsCalculator.js';
-
 
 import {
     createTrack
@@ -212,8 +212,6 @@ const guiCamera = new dat.GUI();
 const guiCarParams = new dat.GUI();
 const guiTracks = new dat.GUI();
 
-
-
 const guiArr = [guiTransform, guiCamera, guiCarParams, guiTracks];
 
 guiArr.map(gui => gui.hide());
@@ -284,6 +282,38 @@ $('#customSwitch').click(toggleGrid)
 
 camera.position.z = 10;
 camera.position.y = 2;
+
+function loadCubemap() {
+
+    const cubemapLoader = new CubeTextureLoader();
+
+    const textures = [
+        '../assets/px.png',
+        '../assets/nx.png',
+        '../assets/py.png',
+        '../assets/ny.png',
+        '../assets/pz.png',
+        '../assets/nz.png'
+
+    ]
+
+    const texture = cubemapLoader.load(textures)
+
+    scene.background = texture;
+}
+
+loadCubemap()
+
+function toggleCubemap() {
+
+    if ($(this).is(':checked')) {
+        loadCubemap()
+    } else {
+        scene.background = null
+    }
+}
+
+$('#customSwitch2').click(toggleCubemap)
 
 console.log(scene);
 
