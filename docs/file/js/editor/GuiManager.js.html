@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/editor/GuiManager.js | rgnjs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/grzesiekmq/rgnjs"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadFinishLine">loadFinishLine</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-saveString">saveString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCamera">guiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCarParams">guiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTracks">guiTracks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTransform">guiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-notifier">notifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pi">pi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor">editor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/editor/Transform.js~Transform.html">Transform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setCarColor">setCarColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clickActions">clickActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-displayEntity">displayEntity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCamera">addGuiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCarParams">addGuiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiTransform">addGuiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exportToJsonFile">exportToJsonFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateCarData">generateCarData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSpringRate">calculateSpringRate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSteering">calculateSteering</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addBox">addBox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCone">addCone</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCylinder">addCylinder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPlane">addPlane</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCameraNameTpl">addCameraNameTpl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addTurn">addTurn</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createTrack">createTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorGUI">colorGUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-leftpart1">leftpart1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor-tracks">editor/tracks</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hardTrack">hardTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rivieraTrack">rivieraTrack</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib">lib</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GLTFExporter">GLTFExporter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-GLTFLoader">GLTFLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn">lib/rgn</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Camera.js~Camera.html">Camera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Car.js~Car.html">Car</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Driver.js~Driver.html">Driver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Maths.js~Maths.html">Maths</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn-carparts">lib/rgn/CarParts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Clutch.js~Clutch.html">Clutch</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Differential.js~Differential.html">Differential</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Gearbox.js~Gearbox.html">Gearbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Suspension.js~Suspension.html">Suspension</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/editor/GuiManager.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+    guiCarParams,
+    notifier,
+    camera
+} from &apos;../app.js&apos;;
+/** 
+ * 
+ * 
+ * @param gui
+ * @param model
+ * 
+ */
+function addGuiTransform(gui, model) {
+    const fTrans = gui.addFolder(&apos;Transform&apos;);
+    const fPos = fTrans.addFolder(&apos;Position&apos;);
+    const fRot = fTrans.addFolder(&apos;Rotation&apos;);
+    const fScale = fTrans.addFolder(&apos;Scale&apos;);
+
+    const position = {
+        x: 0,
+        y: 0,
+        z: 0,
+        resetPos: function() {
+            model.position.set(0, 0, 0);
+            position.x = 0;
+            position.y = 0;
+            position.z = 0;
+        }
+    };
+    const rotation = {
+        x: 0,
+        y: 0,
+        z: 0,
+        resetRot: function() {
+            model.rotation.set(0, 0, 0);
+            rotation.x = 0;
+            rotation.y = 0;
+            rotation.z = 0;
+        }
+    };
+    const scale = {
+        x: 0,
+        y: 0,
+        z: 0
+    };
+
+    let posX = fPos.add(position, &apos;x&apos;, -10, 10, .1).listen();
+    let posY = fPos.add(position, &apos;y&apos;, -10, 10, .1).listen();
+    let posZ = fPos.add(position, &apos;z&apos;, -10, 10, .1).listen();
+    fPos.add(position, &apos;resetPos&apos;);
+
+    let rotX = fRot.add(rotation, &apos;x&apos;, -4, 4, .05).listen();
+    let rotY = fRot.add(rotation, &apos;y&apos;, -4, 4, .05).listen();
+    let rotZ = fRot.add(rotation, &apos;z&apos;, -4, 4, .05).listen();
+    fRot.add(rotation, &apos;resetRot&apos;);
+
+    let scaleX = fScale.add(scale, &apos;x&apos;).listen();
+    let scaleY = fScale.add(scale, &apos;y&apos;).listen();
+    let scaleZ = fScale.add(scale, &apos;z&apos;).listen();
+
+    fTrans.open();
+
+    fPos.open();
+    fRot.open();
+    fScale.open();
+
+    posX.onChange(function(value) {
+        model.position.x = value;
+
+        console.log(&apos;x&apos;, value)
+    });
+
+    posY.onChange(function(value) {
+        model.position.y = value;
+    });
+
+    posZ.onChange(function(value) {
+        model.position.z = value;
+    });
+
+    rotX.onChange(function(value) {
+        model.rotation.x = value;
+    });
+
+    rotY.onChange(function(value) {
+        model.rotation.y = value;
+    });
+
+    rotZ.onChange(function(value) {
+        model.rotation.z = value;
+    });
+
+}
+/**
+ * 
+ * @param  gui 
+ */
+function addGuiCamera(gui) {
+
+    const fTrans = gui.addFolder(&apos;Transform&apos;);
+    const fPos = fTrans.addFolder(&apos;Position&apos;);
+    const fRot = fTrans.addFolder(&apos;Rotation&apos;);
+
+    let {
+        name,
+        position,
+        rotation
+    } = camera;
+
+    const cameraParams = {
+        name,
+        cameraView: &apos;Near&apos;
+    };
+
+    const pos = {
+        x: 0,
+        y: 0,
+        z: 0,
+        resetPos: function() {
+            position.set(0, 0, 0);
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
+        }
+    };
+    const rot = {
+        x: 0,
+        y: 0,
+        z: 0,
+        resetRot: function() {
+            rotation.set(0, 0, 0);
+            rot.x = 0;
+            rot.y = 0;
+            rot.z = 0;
+        }
+    };
+
+    let posX = fPos.add(pos, &apos;x&apos;, -10, 10, .1).listen();
+    let posY = fPos.add(pos, &apos;y&apos;, -10, 10, .1).listen();
+    let posZ = fPos.add(pos, &apos;z&apos;, -10, 10, .1).listen();
+    fPos.add(pos, &apos;resetPos&apos;);
+
+    let rotX = fRot.add(rot, &apos;x&apos;, -4, 4).listen();
+    let rotY = fRot.add(rot, &apos;y&apos;, -4, 4).listen();
+    let rotZ = fRot.add(rot, &apos;z&apos;, -4, 4).listen();
+    fRot.add(rot, &apos;resetRot&apos;);
+
+    fTrans.open();
+
+    fPos.open();
+    fRot.open();
+
+    posX.onChange(function(value) {
+        position.x = value;
+    });
+
+    posY.onChange(function(value) {
+        position.y = value;
+    });
+
+    posZ.onChange(function(value) {
+        position.z = value;
+    });
+
+    rotX.onChange(function(value) {
+        rotation.x = value;
+    });
+
+    rotY.onChange(function(value) {
+        rotation.y = value;
+    });
+
+    rotZ.onChange(function(value) {
+        rotation.z = value;
+    });
+
+    const cameraView = [
+        &apos;SideLeft&apos;,
+        &apos;SideRight&apos;,
+        &apos;Near&apos;,
+        &apos;Far&apos;,
+        &apos;Driver&apos;,
+        &apos;Front&apos;,
+        &apos;Bumper&apos;,
+        &apos;Hood&apos;
+    ];
+
+    let cameraViewValue = gui.add(cameraParams, &apos;cameraView&apos;, cameraView).listen();
+
+    cameraViewValue.onChange(function(value) {
+
+        if (value === &apos;Near&apos;) {
+            position.z = 5;
+
+            console.log(&apos;near&apos;);
+        } else if (value === &apos;Far&apos;) {
+            position.z = 10;
+            console.log(&apos;far&apos;);
+        } else if (value === &apos;SideLeft&apos;) {
+            console.log(&apos;side left&apos;);
+        } else if (value === &apos;SideRight&apos;) {
+            position.set(-5, 1, -2);
+            rotation.y = -2;
+            console.log(&apos;side right&apos;);
+        } else if (value === &apos;Driver&apos;) {
+            console.log(&apos;driver&apos;);
+        } else if (value === &apos;Front&apos;) {
+            console.log(&apos;front&apos;);
+        } else if (value === &apos;Bumper&apos;) {
+            console.log(&apos;bumper&apos;);
+        } else if (value === &apos;Hood&apos;) {
+            console.log(&apos;hood&apos;);
+        }
+    });
+
+}
+
+/**
+ * 
+ * @param  gui 
+ */
+function addGuiCarParams(gui) {
+    const cars = [];
+
+
+    const carParams = {
+        make: &apos;&apos;,
+        model: &apos;&apos;,
+        topSpeed: 0,
+        acceleration: 0,
+        color: &apos;&apos;,
+        hp: 0,
+        weight: 0,
+        wheelbase: 0,
+        rearTrack: 0,
+        turnRadius: 0,
+        wheelRadius: 0.0,
+        RPM: 0,
+        fuelConsumption: 0,
+        tireExploit: 0,
+        driveType: &apos;fwd&apos;,
+        transmission: &apos;AT&apos;,
+        carType: &apos;Racecar&apos;,
+        racingType: &apos;&apos;,
+        differential: &apos;ClutchPack&apos;,
+        paint: &apos;Matte&apos;,
+        price: &apos;Usd&apos;,
+        isLocked: true,
+        isWon: false,
+        isUsed: false,
+        AImode: false,
+        generate: function() {
+            const carData = generateCarData();
+            cars.push(carData);
+            notifier.success(&apos;cars data added&apos;);
+
+        },
+        exportToJsonFile: function() {
+
+            const content = `&lt;pre id=&quot;cars-json&quot;&gt;${JSON.stringify(cars, null, 3)}&lt;/pre&gt; `
+            $(&apos;#exampleModalScrollable&apos;).modal();
+            document.querySelector(&apos;.modal-body&apos;).innerHTML = content;
+            $(&apos;#download&apos;).click(function() {
+                exportToJsonFile(cars);
+
+            });
+
+        }
+
+    };
+
+    const driveType = [&apos;fwd&apos;, &apos;rwd&apos;, &apos;awd&apos;];
+    const transmission = [&apos;AT&apos;, &apos;MT&apos;];
+    const carType = [
+        &apos;Racecar&apos;,
+        &apos;Supercar&apos;,
+        &apos;Drift&apos;,
+        &apos;Drag&apos;,
+        &apos;Rally&apos;,
+        &apos;Sports&apos;,
+        &apos;Concept&apos;,
+        &apos;Hypercar&apos;,
+        &apos;Tuned&apos;
+    ];
+    const racingType = [
+        &apos;GTR&apos;,
+        &apos;F1&apos;,
+        &apos;Touring&apos;
+    ];
+    const differential = [&apos;ClutchPack&apos;,
+        &apos;Locked&apos;, // drift
+        &apos;Open&apos;,
+        &apos;TorqueBias&apos;,
+        &apos;Viscous&apos;
+    ];
+
+    const paint = [
+        &apos;Matte&apos;,
+        &apos;Chrome&apos;,
+        &apos;Metallic&apos;,
+        &apos;Pearl&apos;,
+        &apos;Solid&apos;
+    ];
+    const price = [&apos;Usd&apos;,
+        &apos;Eur&apos;
+    ];
+
+    const params = [&apos;make&apos;,
+        &apos;model&apos;, &apos;topSpeed&apos;, &apos;acceleration&apos;, &apos;color&apos;, &apos;hp&apos;, &apos;weight&apos;
+    ];
+
+    const ackermannParams = [
+        &apos;wheelbase&apos;,
+        &apos;rearTrack&apos;,
+        &apos;turnRadius&apos;,
+        &apos;wheelRadius&apos;
+
+    ];
+
+    const params2 = [
+        &apos;RPM&apos;,
+        &apos;fuelConsumption&apos;,
+        &apos;tireExploit&apos;
+    ];
+
+    const switchesArr = [
+        &apos;isLocked&apos;,
+        &apos;isWon&apos;,
+        &apos;isUsed&apos;,
+        &apos;AImode&apos;
+    ];
+    const types = {
+        driveType,
+        carType,
+        racingType,
+        differential
+    };
+
+    function addParams() {
+        params.map(param =&gt; gui.add(carParams, param));
+
+        const ackermann = gui.addFolder(&apos;Ackermann steering&apos;);
+
+        ackermannParams.map(param =&gt; ackermann.add(carParams, param));
+        params2.map((param) =&gt; gui.add(carParams, param));
+        gui.add(carParams, &apos;transmission&apos;, transmission);
+        switchesArr.map(param =&gt; gui.add(carParams, param));
+
+        const fTypes = gui.addFolder(&apos;Types&apos;);
+
+        Object.entries(types).map(([key, value]) =&gt; fTypes.add(carParams, key, value));
+        gui.add(carParams, &apos;paint&apos;, paint);
+        gui.add(carParams, &apos;price&apos;, price);
+
+        gui.add(carParams, &apos;generate&apos;);
+        gui.add(carParams, &apos;exportToJsonFile&apos;).name(&apos;export to json&apos;);
+    }
+
+    addParams();
+
+}
+
+function generateCarData() {
+    const gui = guiCarParams;
+
+    return gui.__controllers[0].object;
+}
+
+/**
+ * 
+ * @param  jsonData 
+ */
+function exportToJsonFile(jsonData) {
+    let dataStr = JSON.stringify(jsonData);
+    let dataUri = &apos;data:application/json;charset=utf-8,&apos; + encodeURIComponent(dataStr);
+
+    let exportFileDefaultName = &apos;data.json&apos;;
+
+    let linkElement = document.createElement(&apos;a&apos;);
+    linkElement.setAttribute(&apos;href&apos;, dataUri);
+    linkElement.setAttribute(&apos;download&apos;, exportFileDefaultName);
+    linkElement.click();
+}
+
+export {
+    addGuiTransform,
+    addGuiCamera,
+    addGuiCarParams,
+    generateCarData,
+    exportToJsonFile
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

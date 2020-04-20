@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/editor/Transform.js | rgnjs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/grzesiekmq/rgnjs"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadFinishLine">loadFinishLine</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-saveString">saveString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCamera">guiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCarParams">guiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTracks">guiTracks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTransform">guiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-notifier">notifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pi">pi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor">editor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/editor/Transform.js~Transform.html">Transform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setCarColor">setCarColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clickActions">clickActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-displayEntity">displayEntity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCamera">addGuiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCarParams">addGuiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiTransform">addGuiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exportToJsonFile">exportToJsonFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateCarData">generateCarData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSpringRate">calculateSpringRate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSteering">calculateSteering</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addBox">addBox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCone">addCone</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCylinder">addCylinder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPlane">addPlane</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCameraNameTpl">addCameraNameTpl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addTurn">addTurn</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createTrack">createTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorGUI">colorGUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-leftpart1">leftpart1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor-tracks">editor/tracks</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hardTrack">hardTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rivieraTrack">rivieraTrack</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib">lib</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GLTFExporter">GLTFExporter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-GLTFLoader">GLTFLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn">lib/rgn</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Camera.js~Camera.html">Camera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Car.js~Car.html">Car</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Driver.js~Driver.html">Driver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Maths.js~Maths.html">Maths</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn-carparts">lib/rgn/CarParts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Clutch.js~Clutch.html">Clutch</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Differential.js~Differential.html">Differential</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Gearbox.js~Gearbox.html">Gearbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Suspension.js~Suspension.html">Suspension</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/editor/Transform.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export class Transform {
+    constructor() {
+
+    }
+
+    static setPosX(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+            const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
+            if (enter) {
+                position.x = value;
+            }
+        });
+    }
+
+    static setPosY(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
+
+            if (enter) {
+                position.y = value;
+            }
+        });
+    }
+
+    static setPosZ(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                position
+            } = model;
+
+            if (enter) {
+                position.z = value;
+            }
+        });
+    }
+
+
+    static setRotX(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
+            if (enter) {
+                rotation.x = value;
+            }
+        });
+    }
+
+    static setRotY(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
+            if (enter) {
+                rotation.y = value;
+            }
+        });
+    }
+
+    static setRotZ(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                rotation
+            } = model;
+
+            if (enter) {
+                rotation.z = value;
+            }
+        });
+    }
+
+    static setScaleX(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
+            if (enter) {
+                scale.x = value;
+            }
+        });
+    }
+
+    static setScaleY(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
+            if (enter) {
+                scale.y = value;
+            }
+        });
+    }
+    static setScaleZ(transform, model) {
+        transform.addEventListener(&apos;keypress&apos;, e =&gt; {
+
+            let {
+                value
+            } = transform;
+
+            const enter = e.keyCode === 13;
+            const {
+                scale
+            } = model;
+
+            if (enter) {
+                scale.z = value;
+            }
+        });
+    }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

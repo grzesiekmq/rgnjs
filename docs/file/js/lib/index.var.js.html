@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">js/lib/index.var.js | rgnjs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/grzesiekmq/rgnjs"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadFinishLine">loadFinishLine</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-saveString">saveString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCamera">guiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiCarParams">guiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTracks">guiTracks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-guiTransform">guiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-notifier">notifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pi">pi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor">editor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/editor/Transform.js~Transform.html">Transform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setCarColor">setCarColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clickActions">clickActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-displayEntity">displayEntity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCamera">addGuiCamera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiCarParams">addGuiCarParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addGuiTransform">addGuiTransform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exportToJsonFile">exportToJsonFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateCarData">generateCarData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSpringRate">calculateSpringRate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateSteering">calculateSteering</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addBox">addBox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCone">addCone</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCylinder">addCylinder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPlane">addPlane</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCameraNameTpl">addCameraNameTpl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addTurn">addTurn</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createTrack">createTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorGUI">colorGUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-leftpart1">leftpart1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#editor-tracks">editor/tracks</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hardTrack">hardTrack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rivieraTrack">rivieraTrack</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib">lib</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GLTFExporter">GLTFExporter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-GLTFLoader">GLTFLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn">lib/rgn</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Camera.js~Camera.html">Camera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Car.js~Car.html">Car</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Driver.js~Driver.html">Driver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/Maths.js~Maths.html">Maths</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#lib-rgn-carparts">lib/rgn/CarParts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Clutch.js~Clutch.html">Clutch</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Differential.js~Differential.html">Differential</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Gearbox.js~Gearbox.html">Gearbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/lib/rgn/CarParts/Suspension.js~Suspension.html">Suspension</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/lib/index.var.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var AWN = function(t) {
+    var e = {};
+
+    function n(o) {
+        if (e[o]) return e[o].exports;
+        var i = e[o] = {
+            i: o,
+            l: !1,
+            exports: {}
+        };
+        return t[o].call(i.exports, i, i.exports, n), i.l = !0, i.exports
+    }
+    return n.m = t, n.c = e, n.d = function(t, e, o) {
+        n.o(t, e) || Object.defineProperty(t, e, {
+            enumerable: !0,
+            get: o
+        })
+    }, n.r = function(t) {
+        &quot;undefined&quot; != typeof Symbol &amp;&amp; Symbol.toStringTag &amp;&amp; Object.defineProperty(t, Symbol.toStringTag, {
+            value: &quot;Module&quot;
+        }), Object.defineProperty(t, &quot;__esModule&quot;, {
+            value: !0
+        })
+    }, n.t = function(t, e) {
+        if (1 &amp; e &amp;&amp; (t = n(t)), 8 &amp; e) return t;
+        if (4 &amp; e &amp;&amp; &quot;object&quot; == typeof t &amp;&amp; t &amp;&amp; t.__esModule) return t;
+        var o = Object.create(null);
+        if (n.r(o), Object.defineProperty(o, &quot;default&quot;, {
+                enumerable: !0,
+                value: t
+            }), 2 &amp; e &amp;&amp; &quot;string&quot; != typeof t)
+            for (var i in t) n.d(o, i, function(e) {
+                return t[e]
+            }.bind(null, i));
+        return o
+    }, n.n = function(t) {
+        var e = t &amp;&amp; t.__esModule ? function() {
+            return t.default
+        } : function() {
+            return t
+        };
+        return n.d(e, &quot;a&quot;, e), e
+    }, n.o = function(t, e) {
+        return Object.prototype.hasOwnProperty.call(t, e)
+    }, n.p = &quot;&quot;, n(n.s = 0)
+}([function(t, e, n) {
+    t.exports = n(1).default
+}, function(t, e, n) {
+    &quot;use strict&quot;;
+
+    function o(t) {
+        return (o = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.iterator ? function(t) {
+            return typeof t
+        } : function(t) {
+            return t &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; t.constructor === Symbol &amp;&amp; t !== Symbol.prototype ? &quot;symbol&quot; : typeof t
+        })(t)
+    }
+
+    function i(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+    n.r(e);
+    var r = {
+            maxNotifications: 10,
+            animationDuration: 300,
+            position: &quot;bottom-right&quot;,
+            labels: {
+                tip: &quot;Tip&quot;,
+                info: &quot;Info&quot;,
+                success: &quot;Success&quot;,
+                warning: &quot;Attention&quot;,
+                alert: &quot;Error&quot;,
+                async: &quot;Loading&quot;,
+                confirm: &quot;Confirmation required&quot;,
+                confirmOk: &quot;OK&quot;,
+                confirmCancel: &quot;Cancel&quot;
+            },
+            icons: {
+                tip: &quot;question-circle&quot;,
+                info: &quot;info-circle&quot;,
+                success: &quot;check-circle&quot;,
+                warning: &quot;exclamation-circle&quot;,
+                alert: &quot;exclamation-triangle&quot;,
+                async: &quot;cog fa-spin&quot;,
+                confirm: &quot;exclamation-triangle&quot;,
+                prefix: &quot;&lt;i class=&apos;fa fas fa-fw fa-&quot;,
+                suffix: &quot;&apos;&gt;&lt;/i&gt;&quot;,
+                enabled: !0
+            },
+            replacements: {
+                tip: null,
+                info: null,
+                success: null,
+                warning: null,
+                alert: null,
+                async: null,
+                &quot;async-block&quot;: null,
+                modal: null,
+                confirm: null,
+                general: {
+                    &quot;&lt;script&gt;&quot;: &quot;&quot;,
+                    &quot;&lt;\/script&gt;&quot;: &quot;&quot;
+                }
+            },
+            messages: {
+                tip: &quot;&quot;,
+                info: &quot;&quot;,
+                success: &quot;Action has been succeeded&quot;,
+                warning: &quot;&quot;,
+                alert: &quot;Action has been failed&quot;,
+                confirm: &quot;This action can&apos;t be undone. Continue?&quot;,
+                async: &quot;Please, wait...&quot;,
+                &quot;async-block&quot;: &quot;Loading&quot;
+            },
+            formatError: function(t) {
+                if (t.response) {
+                    if (!t.response.data) return &quot;500 API Server Error&quot;;
+                    if (t.response.data.errors) return t.response.data.errors.map(function(t) {
+                        return t.detail
+                    }).join(&quot;&lt;br&gt;&quot;);
+                    if (t.response.statusText) return &quot;&quot;.concat(t.response.status, &quot; &quot;).concat(t.response.statusText, &quot;: &quot;).concat(t.response.data)
+                }
+                return t.message ? t.message : t
+            },
+            durations: {
+                global: 5e3,
+                success: null,
+                info: null,
+                tip: null,
+                warning: null,
+                alert: null
+            },
+            minDurations: {
+                async: 1e3,
+                &quot;async-block&quot;: 1e3
+            }
+        },
+        a = function() {
+            function t() {
+                var e = arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : {},
+                    n = arguments.length &gt; 1 &amp;&amp; void 0 !== arguments[1] ? arguments[1] : r;
+                ! function(t, e) {
+                    if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+                }(this, t), Object.assign(this, this.defaultsDeep(n, e))
+            }
+            var e, n, a;
+            return e = t, (n = [{
+                key: &quot;icon&quot;,
+                value: function(t) {
+                    return this.icons.enabled ? &quot;&quot;.concat(this.icons.prefix).concat(this.icons[t]).concat(this.icons.suffix) : &quot;&quot;
+                }
+            }, {
+                key: &quot;label&quot;,
+                value: function(t) {
+                    return this.labels[t]
+                }
+            }, {
+                key: &quot;duration&quot;,
+                value: function(t) {
+                    var e = this.durations[t];
+                    return null === e ? this.durations.global : e
+                }
+            }, {
+                key: &quot;toSecs&quot;,
+                value: function(t) {
+                    return &quot;&quot;.concat(t / 1e3, &quot;s&quot;)
+                }
+            }, {
+                key: &quot;applyReplacements&quot;,
+                value: function(t, e) {
+                    if (!t) return this.messages[e] || &quot;&quot;;
+                    for (var n = 0, o = [&quot;general&quot;, e]; n &lt; o.length; n++) {
+                        var i = o[n];
+                        if (this.replacements[i])
+                            for (var r in this.replacements[i]) t = t.replace(r, this.replacements[i][r])
+                    }
+                    return t
+                }
+            }, {
+                key: &quot;override&quot;,
+                value: function(e) {
+                    return e ? new t(e, this) : this
+                }
+            }, {
+                key: &quot;defaultsDeep&quot;,
+                value: function(t, e) {
+                    var n = {};
+                    for (var i in t) e.hasOwnProperty(i) ? n[i] = &quot;object&quot; === o(t[i]) &amp;&amp; null !== t[i] ? this.defaultsDeep(t[i], e[i]) : e[i] : n[i] = t[i];
+                    return n
+                }
+            }]) &amp;&amp; i(e.prototype, n), a &amp;&amp; i(e, a), t
+        }(),
+        s = {
+            popup: &quot;&quot;.concat(&quot;awn&quot;, &quot;-popup&quot;),
+            toast: &quot;&quot;.concat(&quot;awn&quot;, &quot;-toast&quot;),
+            btn: &quot;&quot;.concat(&quot;awn&quot;, &quot;-btn&quot;),
+            confirm: &quot;&quot;.concat(&quot;awn&quot;, &quot;-confirm&quot;)
+        },
+        c = {
+            prefix: s.toast,
+            klass: {
+                label: &quot;&quot;.concat(s.toast, &quot;-label&quot;),
+                content: &quot;&quot;.concat(s.toast, &quot;-content&quot;),
+                icon: &quot;&quot;.concat(s.toast, &quot;-icon&quot;),
+                progressBar: &quot;&quot;.concat(s.toast, &quot;-progress-bar&quot;),
+                progressBarPause: &quot;&quot;.concat(s.toast, &quot;-progress-bar-paused&quot;)
+            },
+            ids: {
+                container: &quot;&quot;.concat(s.toast, &quot;-container&quot;)
+            }
+        },
+        u = {
+            prefix: s.popup,
+            klass: {
+                buttons: &quot;&quot;.concat(&quot;awn&quot;, &quot;-buttons&quot;),
+                button: s.btn,
+                successBtn: &quot;&quot;.concat(s.btn, &quot;-success&quot;),
+                cancelBtn: &quot;&quot;.concat(s.btn, &quot;-cancel&quot;),
+                title: &quot;&quot;.concat(s.popup, &quot;-title&quot;),
+                body: &quot;&quot;.concat(s.popup, &quot;-body&quot;),
+                content: &quot;&quot;.concat(s.popup, &quot;-content&quot;),
+                dotAnimation: &quot;&quot;.concat(s.popup, &quot;-loading-dots&quot;)
+            },
+            ids: {
+                wrapper: &quot;&quot;.concat(s.popup, &quot;-wrapper&quot;),
+                confirmOk: &quot;&quot;.concat(s.confirm, &quot;-ok&quot;),
+                confirmCancel: &quot;&quot;.concat(s.confirm, &quot;-cancel&quot;)
+            }
+        },
+        l = {
+            klass: {
+                hiding: &quot;&quot;.concat(&quot;awn&quot;, &quot;-hiding&quot;)
+            },
+            lib: &quot;awn&quot;
+        };
+
+    function f(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+    var p = function() {
+        function t(e, n, o, i, r) {
+            ! function(t, e) {
+                if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+            }(this, t), this.newNode = document.createElement(&quot;div&quot;), n &amp;&amp; (this.newNode.id = n), o &amp;&amp; (this.newNode.className = o), i &amp;&amp; (this.newNode.style.cssText = i), this.parent = e, this.options = r
+        }
+        var e, n, o;
+        return e = t, (n = [{
+            key: &quot;beforeInsert&quot;,
+            value: function() {}
+        }, {
+            key: &quot;afterInsert&quot;,
+            value: function() {}
+        }, {
+            key: &quot;insert&quot;,
+            value: function() {
+                return this.beforeInsert(), this.el = this.parent.appendChild(this.newNode), this.afterInsert(), this
+            }
+        }, {
+            key: &quot;replace&quot;,
+            value: function(t) {
+                var e = this;
+                if (this.getElement()) return this.beforeDelete().then(function() {
+                    return e.updateType(t.type), e.parent.replaceChild(t.newNode, e.el), e.el = e.getElement(t.newNode), e.afterInsert(), e
+                })
+            }
+        }, {
+            key: &quot;beforeDelete&quot;,
+            value: function() {
+                var t = this,
+                    e = arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : this.el,
+                    n = 0;
+                return this.start &amp;&amp; (n = this.options.minDurations[this.type] + this.start - Date.now()) &lt; 0 &amp;&amp; (n = 0), new Promise(function(o) {
+                    setTimeout(function() {
+                        e.classList.add(l.klass.hiding), setTimeout(o, t.options.animationDuration)
+                    }, n)
+                })
+            }
+        }, {
+            key: &quot;delete&quot;,
+            value: function() {
+                var t = this,
+                    e = arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : this.el;
+                return this.getElement(e) ? this.beforeDelete(e).then(function() {
+                    e.remove(), t.afterDelete()
+                }) : null
+            }
+        }, {
+            key: &quot;afterDelete&quot;,
+            value: function() {}
+        }, {
+            key: &quot;getElement&quot;,
+            value: function() {
+                var t = arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : this.el;
+                return document.getElementById(t.id)
+            }
+        }, {
+            key: &quot;addEvent&quot;,
+            value: function(t, e) {
+                this.el.addEventListener(t, e)
+            }
+        }, {
+            key: &quot;toggleClass&quot;,
+            value: function(t) {
+                this.el.classList.toggle(t)
+            }
+        }, {
+            key: &quot;updateType&quot;,
+            value: function(t) {
+                this.type = t, this.duration = this.options.duration(this.type)
+            }
+        }]) &amp;&amp; f(e.prototype, n), o &amp;&amp; f(e, o), t
+    }();
+
+    function d(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+    var h = function() {
+        function t(e, n) {
+            ! function(t, e) {
+                if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+            }(this, t), this.callback = e, this.remaining = n, this.resume()
+        }
+        var e, n, o;
+        return e = t, (n = [{
+            key: &quot;pause&quot;,
+            value: function() {
+                this.paused = !0, window.clearTimeout(this.timerId), this.remaining -= new Date - this.start
+            }
+        }, {
+            key: &quot;resume&quot;,
+            value: function() {
+                var t = this;
+                this.paused = !1, this.start = new Date, window.clearTimeout(this.timerId), this.timerId = window.setTimeout(function() {
+                    window.clearTimeout(t.timerId), t.callback()
+                }, this.remaining)
+            }
+        }, {
+            key: &quot;toggle&quot;,
+            value: function() {
+                this.paused ? this.resume() : this.pause()
+            }
+        }]) &amp;&amp; d(e.prototype, n), o &amp;&amp; d(e, o), t
+    }();
+
+    function y(t) {
+        return (y = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.iterator ? function(t) {
+            return typeof t
+        } : function(t) {
+            return t &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; t.constructor === Symbol &amp;&amp; t !== Symbol.prototype ? &quot;symbol&quot; : typeof t
+        })(t)
+    }
+
+    function m(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+
+    function v(t, e) {
+        return !e || &quot;object&quot; !== y(e) &amp;&amp; &quot;function&quot; != typeof e ? function(t) {
+            if (void 0 === t) throw new ReferenceError(&quot;this hasn&apos;t been initialised - super() hasn&apos;t been called&quot;);
+            return t
+        }(t) : e
+    }
+
+    function b(t) {
+        return (b = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
+            return t.__proto__ || Object.getPrototypeOf(t)
+        })(t)
+    }
+
+    function k(t, e) {
+        return (k = Object.setPrototypeOf || function(t, e) {
+            return t.__proto__ = e, t
+        })(t, e)
+    }
+    var g = function(t) {
+        function e(t, n, o, i) {
+            var r;
+            return function(t, e) {
+                if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+            }(this, e), (r = v(this, b(e).call(this, i, &quot;&quot;.concat(c.prefix, &quot;-&quot;).concat(Math.floor(Date.now() - 100 * Math.random())), &quot;&quot;.concat(c.prefix, &quot; &quot;).concat(c.prefix, &quot;-&quot;).concat(n), &quot;animation-duration: &quot;.concat(o.toSecs(o.animationDuration), &quot;;&quot;), o))).updateType(n), r.setInnerHtml(t), r
+        }
+        var n, o, i;
+        return function(t, e) {
+            if (&quot;function&quot; != typeof e &amp;&amp; null !== e) throw new TypeError(&quot;Super expression must either be null or a function&quot;);
+            t.prototype = Object.create(e &amp;&amp; e.prototype, {
+                constructor: {
+                    value: t,
+                    writable: !0,
+                    configurable: !0
+                }
+            }), e &amp;&amp; k(t, e)
+        }(e, p), n = e, (o = [{
+            key: &quot;setInnerHtml&quot;,
+            value: function(t) {
+                &quot;alert&quot; === this.type &amp;&amp; t &amp;&amp; (t = this.options.formatError(t)), t = this.options.applyReplacements(t, this.type), this.newNode.innerHTML = &apos;&lt;div class=&quot;awn-toast-wrapper&quot;&gt;&apos;.concat(this.progressBar).concat(this.label, &apos;&lt;div class=&quot;&apos;).concat(c.klass.content, &apos;&quot;&gt;&apos;).concat(t, &apos;&lt;/div&gt;&lt;span class=&quot;&apos;).concat(c.klass.icon, &apos;&quot;&gt;&apos;).concat(this.options.icon(this.type), &quot;&lt;/span&gt;&lt;/div&gt;&quot;)
+            }
+        }, {
+            key: &quot;beforeInsert&quot;,
+            value: function() {
+                var t = this;
+                if (this.parent.childElementCount &gt;= this.options.maxNotifications) {
+                    var e = Array.from(this.parent.getElementsByClassName(c.prefix));
+                    this.delete(e.find(function(e) {
+                        return !t.isDeleted(e)
+                    }))
+                }
+            }
+        }, {
+            key: &quot;afterInsert&quot;,
+            value: function() {
+                var t = this;
+                if (&quot;async&quot; == this.type) return this.start = Date.now();
+                if (this.addEvent(&quot;click&quot;, function() {
+                        return t.delete()
+                    }), !(this.duration &lt;= 0)) {
+                    this.timer = new h(function() {
+                        return t.delete()
+                    }, this.duration);
+                    for (var e = 0, n = [&quot;mouseenter&quot;, &quot;mouseleave&quot;]; e &lt; n.length; e++) {
+                        var o = n[e];
+                        this.addEvent(o, function() {
+                            t.isDeleted() || (t.toggleClass(c.klass.progressBarPause), t.timer.toggle())
+                        })
+                    }
+                }
+            }
+        }, {
+            key: &quot;isDeleted&quot;,
+            value: function() {
+                return (arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : this.el).classList.contains(l.klass.hiding)
+            }
+        }, {
+            key: &quot;progressBar&quot;,
+            get: function() {
+                return this.duration &lt;= 0 || &quot;async&quot; === this.type ? &quot;&quot; : &quot;&lt;div class=&apos;&quot;.concat(c.klass.progressBar, &quot;&apos; style=\&quot;animation-duration:&quot;).concat(this.options.toSecs(this.duration), &apos;;&quot;&gt;&lt;/div&gt;&apos;)
+            }
+        }, {
+            key: &quot;label&quot;,
+            get: function() {
+                return &apos;&lt;b class=&quot;&apos;.concat(c.klass.label, &apos;&quot;&gt;&apos;).concat(this.options.label(this.type), &quot;&lt;/b&gt;&quot;)
+            }
+        }]) &amp;&amp; m(n.prototype, o), i &amp;&amp; m(n, i), e
+    }();
+
+    function w(t) {
+        return (w = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.iterator ? function(t) {
+            return typeof t
+        } : function(t) {
+            return t &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; t.constructor === Symbol &amp;&amp; t !== Symbol.prototype ? &quot;symbol&quot; : typeof t
+        })(t)
+    }
+
+    function O(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+
+    function _(t, e) {
+        return !e || &quot;object&quot; !== w(e) &amp;&amp; &quot;function&quot; != typeof e ? function(t) {
+            if (void 0 === t) throw new ReferenceError(&quot;this hasn&apos;t been initialised - super() hasn&apos;t been called&quot;);
+            return t
+        }(t) : e
+    }
+
+    function T(t) {
+        return (T = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
+            return t.__proto__ || Object.getPrototypeOf(t)
+        })(t)
+    }
+
+    function E(t, e) {
+        return (E = Object.setPrototypeOf || function(t, e) {
+            return t.__proto__ = e, t
+        })(t, e)
+    }
+    var S = function(t) {
+        function e(t) {
+            var n, o = arguments.length &gt; 1 &amp;&amp; void 0 !== arguments[1] ? arguments[1] : &quot;modal&quot;,
+                i = arguments.length &gt; 2 ? arguments[2] : void 0,
+                r = arguments.length &gt; 3 ? arguments[3] : void 0,
+                a = arguments.length &gt; 4 ? arguments[4] : void 0;
+            ! function(t, e) {
+                if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+            }(this, e);
+            var s = &quot;animation-duration: &quot;.concat(i.toSecs(i.animationDuration), &quot;;&quot;);
+            return (n = _(this, T(e).call(this, document.body, u.ids.wrapper, null, s, i)))[u.ids.confirmOk] = r, n[u.ids.confirmCancel] = a, n.className = &quot;&quot;.concat(u.prefix, &quot;-&quot;).concat(o), [&quot;confirm&quot;, &quot;async-block&quot;, &quot;modal&quot;].includes(o) || (o = &quot;modal&quot;), n.updateType(o), n.setInnerHtml(t), n.insert(), n
+        }
+        var n, o, i;
+        return function(t, e) {
+            if (&quot;function&quot; != typeof e &amp;&amp; null !== e) throw new TypeError(&quot;Super expression must either be null or a function&quot;);
+            t.prototype = Object.create(e &amp;&amp; e.prototype, {
+                constructor: {
+                    value: t,
+                    writable: !0,
+                    configurable: !0
+                }
+            }), e &amp;&amp; E(t, e)
+        }(e, p), n = e, (o = [{
+            key: &quot;setInnerHtml&quot;,
+            value: function(t) {
+                var e = this.options.applyReplacements(t, this.type);
+                switch (this.type) {
+                    case &quot;confirm&quot;:
+                        var n = [&quot;&lt;button class=&apos;&quot;.concat(u.klass.button, &quot; &quot;).concat(u.klass.successBtn, &quot;&apos;id=&apos;&quot;).concat(u.ids.confirmOk, &quot;&apos;&gt;&quot;).concat(this.options.labels.confirmOk, &quot;&lt;/button&gt;&quot;)];
+                        !1 !== this[u.ids.confirmCancel] &amp;&amp; n.push(&quot;&lt;button class=&apos;&quot;.concat(u.klass.button, &quot; &quot;).concat(u.klass.cancelBtn, &quot;&apos;id=&apos;&quot;).concat(u.ids.confirmCancel, &quot;&apos;&gt;&quot;).concat(this.options.labels.confirmCancel, &quot;&lt;/button&gt;&quot;)), e = &quot;&quot;.concat(this.options.icon(this.type), &quot;&lt;div class=&apos;&quot;).concat(u.klass.title, &quot;&apos;&gt;&quot;).concat(this.options.label(this.type), &apos;&lt;/div&gt;&lt;div class=&quot;&apos;).concat(u.klass.content, &apos;&quot;&gt;&apos;).concat(e, &quot;&lt;/div&gt;&lt;div class=&apos;&quot;).concat(u.klass.buttons, &quot; &quot;).concat(u.klass.buttons, &quot;-&quot;).concat(n.length, &quot;&apos;&gt;&quot;).concat(n.join(&quot;&quot;), &quot;&lt;/div&gt;&quot;);
+                        break;
+                    case &quot;async-block&quot;:
+                        e = &quot;&quot;.concat(e, &apos;&lt;div class=&quot;&apos;).concat(u.klass.dotAnimation, &apos;&quot;&gt;&lt;/div&gt;&apos;)
+                }
+                this.newNode.innerHTML = &apos;&lt;div class=&quot;&apos;.concat(u.klass.body, &quot; &quot;).concat(this.className, &apos;&quot;&gt;&apos;).concat(e, &quot;&lt;/div&gt;&quot;)
+            }
+        }, {
+            key: &quot;keyupListener&quot;,
+            value: function(t) {
+                if (&quot;async-block&quot; === this.type) return t.preventDefault();
+                switch (t.code) {
+                    case &quot;Escape&quot;:
+                        t.preventDefault(), this.delete();
+                    case &quot;Tab&quot;:
+                        if (t.preventDefault(), &quot;confirm&quot; !== this.type || !1 === this[u.ids.confirmCancel]) return !0;
+                        var e = this.okBtn;
+                        t.shiftKey ? document.activeElement.id == u.ids.confirmOk &amp;&amp; (e = this.cancelBtn) : document.activeElement.id !== u.ids.confirmCancel &amp;&amp; (e = this.cancelBtn), e.focus()
+                }
+            }
+        }, {
+            key: &quot;afterInsert&quot;,
+            value: function() {
+                var t = this;
+                switch (this.listener = function(e) {
+                    return t.keyupListener(e)
+                }, window.addEventListener(&quot;keydown&quot;, this.listener), this.type) {
+                    case &quot;async-block&quot;:
+                        this.start = Date.now();
+                        break;
+                    case &quot;confirm&quot;:
+                        this.okBtn.focus(), this.addEvent(&quot;click&quot;, function(e) {
+                            if (&quot;BUTTON&quot; !== e.target.nodeName) return !1;
+                            t.delete(), t[e.target.id] &amp;&amp; t[e.target.id]()
+                        });
+                        break;
+                    default:
+                        document.activeElement.blur(), this.addEvent(&quot;click&quot;, function(e) {
+                            e.target.id === t.newNode.id &amp;&amp; t.delete()
+                        })
+                }
+            }
+        }, {
+            key: &quot;afterDelete&quot;,
+            value: function() {
+                window.removeEventListener(&quot;keydown&quot;, this.listener)
+            }
+        }, {
+            key: &quot;okBtn&quot;,
+            get: function() {
+                return document.getElementById(u.ids.confirmOk)
+            }
+        }, {
+            key: &quot;cancelBtn&quot;,
+            get: function() {
+                return document.getElementById(u.ids.confirmCancel)
+            }
+        }]) &amp;&amp; O(n.prototype, o), i &amp;&amp; O(n, i), e
+    }();
+
+    function j(t) {
+        return (j = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.iterator ? function(t) {
+            return typeof t
+        } : function(t) {
+            return t &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; t.constructor === Symbol &amp;&amp; t !== Symbol.prototype ? &quot;symbol&quot; : typeof t
+        })(t)
+    }
+
+    function C(t, e) {
+        for (var n = 0; n &lt; e.length; n++) {
+            var o = e[n];
+            o.enumerable = o.enumerable || !1, o.configurable = !0, &quot;value&quot; in o &amp;&amp; (o.writable = !0), Object.defineProperty(t, o.key, o)
+        }
+    }
+    n.d(e, &quot;default&quot;, function() {
+        return P
+    });
+    var P = function() {
+        function t() {
+            var e = arguments.length &gt; 0 &amp;&amp; void 0 !== arguments[0] ? arguments[0] : {};
+            ! function(t, e) {
+                if (!(t instanceof e)) throw new TypeError(&quot;Cannot call a class as a function&quot;)
+            }(this, t), this.options = new a(e)
+        }
+        var e, n, o;
+        return e = t, (n = [{
+            key: &quot;tip&quot;,
+            value: function(t, e) {
+                return this._addToast(t, &quot;tip&quot;, e).el
+            }
+        }, {
+            key: &quot;info&quot;,
+            value: function(t, e) {
+                return this._addToast(t, &quot;info&quot;, e).el
+            }
+        }, {
+            key: &quot;success&quot;,
+            value: function(t, e) {
+                return this._addToast(t, &quot;success&quot;, e).el
+            }
+        }, {
+            key: &quot;warning&quot;,
+            value: function(t, e) {
+                return this._addToast(t, &quot;warning&quot;, e).el
+            }
+        }, {
+            key: &quot;alert&quot;,
+            value: function(t, e) {
+                return this._addToast(t, &quot;alert&quot;, e).el
+            }
+        }, {
+            key: &quot;async&quot;,
+            value: function(t, e, n, o, i) {
+                var r = this._addToast(o, &quot;async&quot;, i);
+                return this._afterAsync(t, e, n, i, r)
+            }
+        }, {
+            key: &quot;confirm&quot;,
+            value: function(t, e, n, o) {
+                return this._addPopup(t, &quot;confirm&quot;, o, e, n)
+            }
+        }, {
+            key: &quot;asyncBlock&quot;,
+            value: function(t, e, n, o, i) {
+                var r = this._addPopup(o, &quot;async-block&quot;, i);
+                return this._afterAsync(t, e, n, i, r)
+            }
+        }, {
+            key: &quot;modal&quot;,
+            value: function(t, e, n) {
+                return this._addPopup(t, e, n)
+            }
+        }, {
+            key: &quot;closeToasts&quot;,
+            value: function() {
+                for (var t = this.container; t.firstChild;) t.removeChild(t.firstChild)
+            }
+        }, {
+            key: &quot;_addPopup&quot;,
+            value: function(t, e, n, o, i) {
+                return new S(t, e, this.options.override(n), o, i)
+            }
+        }, {
+            key: &quot;_addToast&quot;,
+            value: function(t, e, n, o) {
+                n = this.options.override(n);
+                var i = new g(t, e, n, this.container);
+                return o ? o instanceof S ? o.delete().then(function() {
+                    return i.insert()
+                }) : o.replace(i) : i.insert()
+            }
+        }, {
+            key: &quot;_afterAsync&quot;,
+            value: function(t, e, n, o, i) {
+                return t.then(this._responseHandler(e, &quot;success&quot;, o, i), this._responseHandler(n, &quot;alert&quot;, o, i))
+            }
+        }, {
+            key: &quot;_responseHandler&quot;,
+            value: function(t, e, n, o) {
+                var i = this;
+                return function(r) {
+                    switch (j(t)) {
+                        case &quot;undefined&quot;:
+                        case &quot;string&quot;:
+                            var a = &quot;alert&quot; === e ? t || r : t;
+                            i._addToast(a, e, n, o);
+                            break;
+                        default:
+                            o.delete().then(function() {
+                                t &amp;&amp; t(r)
+                            })
+                    }
+                }
+            }
+        }, {
+            key: &quot;_createContainer&quot;,
+            value: function() {
+                return new p(document.body, c.ids.container, &quot;awn-&quot;.concat(this.options.position)).insert().el
+            }
+        }, {
+            key: &quot;container&quot;,
+            get: function() {
+                return document.getElementById(c.ids.container) || this._createContainer()
+            }
+        }]) &amp;&amp; C(e.prototype, n), o &amp;&amp; C(e, o), t
+    }()
+}]);</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

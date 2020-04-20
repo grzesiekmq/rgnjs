@@ -1,0 +1,340 @@
+{
+  "coverage": "9.42%",
+  "expectCount": 191,
+  "actualCount": 18,
+  "files": {
+    "js/app.js": {
+      "expectCount": 39,
+      "actualCount": 0,
+      "undocumentLines": [
+        113,
+        121,
+        125,
+        127,
+        195,
+        200,
+        217,
+        227,
+        231,
+        247,
+        248,
+        251,
+        273,
+        212,
+        111,
+        49,
+        51,
+        56,
+        57,
+        63,
+        69,
+        77,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        95,
+        96,
+        97,
+        102,
+        123,
+        221,
+        168,
+        239,
+        210,
+        211,
+        213
+      ]
+    },
+    "js/editor/CarColor.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        5
+      ]
+    },
+    "js/editor/ClickHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        32
+      ]
+    },
+    "js/editor/EntityTransform.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "js/editor/GuiManager.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        363
+      ]
+    },
+    "js/editor/out/scripts/prettify/prettify.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "js/editor/ParamsCalculator.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        29
+      ]
+    },
+    "js/editor/Shapes.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "js/editor/Template.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        17
+      ]
+    },
+    "js/editor/TrackCreator.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "js/editor/tracks/HardTrack.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        18,
+        21,
+        45
+      ]
+    },
+    "js/editor/tracks/Riviera.js": {
+      "expectCount": 19,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28
+      ]
+    },
+    "js/editor/Transform.js": {
+      "expectCount": 11,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        6,
+        22,
+        40,
+        59,
+        77,
+        95,
+        113,
+        131,
+        148
+      ]
+    },
+    "js/editor/Turns.js": {
+      "expectCount": 12,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        9,
+        25,
+        40,
+        42,
+        44,
+        46,
+        49,
+        52,
+        55,
+        61,
+        69
+      ]
+    },
+    "js/example/example.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        90,
+        96
+      ]
+    },
+    "js/lib/GLTFExporter.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        32,
+        60,
+        73,
+        83
+      ]
+    },
+    "js/lib/GLTFLoader.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        18
+      ]
+    },
+    "js/lib/index.var.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "js/lib/rgn/Camera.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2
+      ]
+    },
+    "js/lib/rgn/Car.js": {
+      "expectCount": 47,
+      "actualCount": 6,
+      "undocumentLines": [
+        18,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        48,
+        54,
+        60,
+        72,
+        78,
+        95,
+        103,
+        111,
+        116,
+        128,
+        140,
+        207,
+        211,
+        215,
+        219
+      ]
+    },
+    "js/lib/rgn/CarParts/Clutch.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "js/lib/rgn/CarParts/Differential.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2
+      ]
+    },
+    "js/lib/rgn/CarParts/Gearbox.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2
+      ]
+    },
+    "js/lib/rgn/CarParts/Suspension.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        5,
+        9,
+        13,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "js/lib/rgn/Driver.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "js/lib/rgn/Maths.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "js/out/scripts/prettify/prettify.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    }
+  }
+}
