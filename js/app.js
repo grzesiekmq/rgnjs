@@ -298,8 +298,10 @@ function loadCubemap() {
     ]
 
     const texture = cubemapLoader.load(textures)
-
+    
     scene.background = texture;
+
+    scene.environment = texture;
 }
 
 loadCubemap()
