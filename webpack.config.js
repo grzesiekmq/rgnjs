@@ -6,7 +6,7 @@ module.exports = {
 	entry: './js/app.js',
 	 module: {
     rules: [
-    //  { test: /\.js$/, use: 'babel-loader' }
+      { test: /\.js$/, use: 'babel-loader' }
 ]
 },
       resolve: {
