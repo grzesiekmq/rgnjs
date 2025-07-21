@@ -20,7 +20,7 @@ import {
 
 import {
     GLTFExporter
-} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/exporters/GLTFExporter.js';
+} from 'three/examples/jsm/exporters/GLTFExporter.js';
 
 import {
     guiTransform,
