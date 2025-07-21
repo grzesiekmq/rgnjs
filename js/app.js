@@ -13,10 +13,10 @@ import {
 } from './lib/three.module.js';
 import {
     GLTFLoader
-} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/loaders/GLTFLoader.js';
+} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {
     OrbitControls
-} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/controls/OrbitControls.js';
+} from 'three/examples/jsm/controls/OrbitControls.js';
 import {
     addCameraNameTpl
 } from './editor/Template.js';
